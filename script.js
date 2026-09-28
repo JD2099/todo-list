@@ -45,7 +45,7 @@ function addTask() {
 // COMPLETE TASK
 function completeTask(id) {
 
-    // find()
+
     let task = tasks.find(task => task.id === id);
 
     if (task) {
@@ -58,7 +58,7 @@ function completeTask(id) {
 // DELETE TASK
 function deleteTask(id) {
 
-    // filter()
+
     tasks = tasks.filter(task => task.id !== id);
 
     showTasks();
@@ -70,7 +70,6 @@ function showTasks() {
 
     let list = document.getElementById("taskList");
 
-    // map()
     list.innerHTML = tasks.map(task => `
         <li class="${task.completed ? "completed" : ""}">
 
@@ -86,6 +85,8 @@ function showTasks() {
 
         </li>
     `).join("");
+
+    document.getElementById("taskCount").textContent = countTasks();
 }
 
 
